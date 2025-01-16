@@ -43,12 +43,7 @@ Corpus PPL is in the logger.info
 class LMScoring(BaseBin):
     @classmethod
     def add_args(cls, parser):
-        parser.add_argument(
-            "-config",
-            "--config",
-            "-c",
-            required=False,
-            help="Path of main YAML config file.")
+        parser.add_argument("-config", "--config", "-c", required=False, help="Path of main YAML config file.")
 
     @classmethod
     def run(cls, args):
