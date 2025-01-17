@@ -22,9 +22,6 @@ For this purpose we use the same pipeline as the validation of a file
 Below is an example of settings of a config.yaml file
 
 verbose: false
-n_best: 3
-top_p: 0.9
-beam_size: 10
 world_size: 1
 gpu_ranks: [0]
 # use symlinks to last saved step
@@ -126,10 +123,3 @@ class LMScoring(BaseBin):
         ppl_file.close()
 
         os.system('paste "' + config.src + '" "' + config.output + '".ppl > "' + config.output + '"')
-
-
-if __name__ == "__main__":
-    parser = ArgumentParser()
-    LMScoring.add_args(parser)
-    args = parser.parse_args()
-    LMScoring.run(args)
